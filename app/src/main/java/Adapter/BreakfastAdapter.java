@@ -1,6 +1,5 @@
 package Adapter;
 
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,8 +36,9 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
     @Override
     public void onBindViewHolder(@NonNull BreakfastAdapter.ViewHolder holder, int position) {
         ListBreakfastItem item = listItem.get(position);
-        holder.tittle.setText(item.getName());
-        holder.description.setText(item.getDescription());
+        //holder.tittle.setText(item.getTittle());
+        //holder.description.setText(item.getDescription());
+        //holder.price.setText(item.getPrice());
     }
 
     @Override
@@ -54,9 +54,9 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
             super(itemView);
 
             image = itemView.findViewById(R.id.imageBreakfast);
-            tittle = itemView.findViewById(R.id.tittle);
-            description = itemView.findViewById(R.id.description);
-            price = itemView.findViewById(R.id.price);
+            tittle = itemView.findViewById(R.id.breakfastTittle);
+            description = itemView.findViewById(R.id.breakfastDescription);
+            price = itemView.findViewById(R.id.breakfastPrice);
         }
     }
 }

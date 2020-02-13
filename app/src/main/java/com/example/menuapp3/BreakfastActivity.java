@@ -44,7 +44,7 @@ public class BreakfastActivity extends AppCompatActivity {
 
         for (int i =0; i < 2; i++){
             ListBreakfastItem item = new ListBreakfastItem(
-                    "item " + i+ 1, "description");
+                    "puta mierda", "Arroz con camarones y picha", "Precio: 5000");
             listItems.add(item);
         }
 

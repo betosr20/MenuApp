@@ -1,21 +1,23 @@
 package Model;
 
 public class ListBreakfastItem {
-    private String name;
+    private String tittle;
     private String description;
+    private String price;
 
-    public ListBreakfastItem(String name, String description) {
+    public ListBreakfastItem(String tittle, String description, String price) {
 
-        this.name = name;
+        this.tittle = tittle;
         this.description = description;
+        this.price = price;
     }
 
-    public String getName() {
-        return name;
+    public String getTittle() {
+        return tittle;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTittle(String tittle) {
+        this.tittle = tittle;
     }
 
     public String getDescription() {
@@ -24,5 +26,13 @@ public class ListBreakfastItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
