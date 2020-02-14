@@ -1,6 +1,8 @@
 package Adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +38,10 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
     @Override
     public void onBindViewHolder(@NonNull BreakfastAdapter.ViewHolder holder, int position) {
         ListBreakfastItem item = listItem.get(position);
-        //holder.tittle.setText(item.getTittle());
-        //holder.description.setText(item.getDescription());
-        //holder.price.setText(item.getPrice());
+        holder.tittle.setText(item.getTittle());
+        holder.description.setText(item.getDescription());
+        holder.price.setText(item.getPrice());
+
     }
 
     @Override
