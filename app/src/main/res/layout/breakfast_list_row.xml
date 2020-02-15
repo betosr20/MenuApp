@@ -10,12 +10,12 @@
 
     <TextView
         android:id="@+id/breakfastDescription"
-        android:layout_width="185dp"
-        android:layout_height="86dp"
+        android:layout_width="171dp"
+        android:layout_height="85dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:text="Hooola mi coshi como estas. Pör favor siempre recuerda lo muchisimo que te quiero"
+        android:text="Delicioso arroz con camarones Jumbo en la salsa de la casa acompañado de vegetales y ensalada"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/imageBreakfast"
@@ -23,8 +23,8 @@
 
     <TextView
         android:id="@+id/breakfastTittle"
-        android:layout_width="240dp"
-        android:layout_height="57dp"
+        android:layout_width="222dp"
+        android:layout_height="47dp"
         android:layout_above="@+id/breakfastDescription"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="9dp"
@@ -55,8 +55,8 @@
 
     <ImageView
         android:id="@+id/imageBreakfast"
-        android:layout_width="107dp"
-        android:layout_height="109dp"
+        android:layout_width="114dp"
+        android:layout_height="162dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

@@ -41,7 +41,7 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
         holder.tittle.setText(item.getTittle());
         holder.description.setText(item.getDescription());
         holder.price.setText(item.getPrice());
-        holder.image.setImageResource(R.drawable.dessert);
+        holder.image.setImageResource(R.drawable.arrozcamarones);
 
     }
 
