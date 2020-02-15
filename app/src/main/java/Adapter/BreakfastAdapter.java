@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.menuapp3.R;
 
+import java.net.URL;
 import java.util.List;
 
 import Model.ListBreakfastItem;
@@ -41,8 +42,8 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
         holder.tittle.setText(item.getTittle());
         holder.description.setText(item.getDescription());
         holder.price.setText(item.getPrice());
-        holder.image.setImageResource(R.drawable.arrozcamarones);
-
+        Uri uri = Uri.parse(item.getImageURL());
+        holder.image.setImageURI(uri);
     }
 
     @Override
