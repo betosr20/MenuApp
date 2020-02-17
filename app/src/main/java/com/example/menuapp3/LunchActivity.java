@@ -29,6 +29,8 @@ public class LunchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lunch);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //        up button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Busca e inicializa el recyclerView
         recyclerView = findViewById(R.id.lunchRecyclerView);
