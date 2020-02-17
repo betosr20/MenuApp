@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView lunchImage;
     private ImageView dinnerImage;
     private ImageView drinksImage;
+    private ImageView dessertsImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,18 @@ public class MainActivity extends AppCompatActivity {
                 //Aqui va el codigo
 
                 startActivity(new Intent(MainActivity.this, DrinkActivity.class));
+            }
+        });
+
+        //On click para los postres
+        dessertsImage = (ImageView) findViewById(R.id.dessertImageMain);
+
+        dessertsImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DessertActivity.class));
             }
         });
 
