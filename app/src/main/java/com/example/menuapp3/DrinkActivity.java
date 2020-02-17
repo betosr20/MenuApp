@@ -63,13 +63,13 @@ public class DrinkActivity extends AppCompatActivity {
 
         item = new ListBreakfastItem(
                 "Batido de fresa", "Batido de fresa en leche con una fresa y una rodaja de banano",
-                "Precio: 10000 i.v.i",
+                "Precio: 1500 i.v.i",
                 "android.resource://com.example.menuapp3/drawable/strawberrysmoothie");
         listItems.add(item);
 
         item = new ListBreakfastItem(
                 "Limonada con hierbabuena", "Deliciosa limonada con hierbabuena",
-                "Precio: 4500 i.v.i",
+                "Precio: 1200 i.v.i",
                 "android.resource://com.example.menuapp3/drawable/limonadahierbabuena");
         listItems.add(item);
     }
