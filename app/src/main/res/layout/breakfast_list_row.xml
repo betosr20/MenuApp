@@ -79,5 +79,16 @@
         app:layout_constraintStart_toEndOf="@+id/breakfastDescription"
         app:layout_constraintTop_toBottomOf="@+id/breakfastTittle" />
 
+    <CheckBox
+        android:id="@+id/cb_meal_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:textColorLink="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/breakfastTittle"
+        app:layout_constraintTop_toTopOf="@+id/imageBreakfast"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
