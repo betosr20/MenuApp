@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_breakfast">Desayunos</string>
     <string name="title_activity_lunch">Almuerzos</string>
+    <string name="title_activity_dinner">Cenas</string>
+    <string name="title_activity_drink">Bebidas</string>
+    <string name="title_activity_dessert">Postres</string>
 </resources>

@@ -18,56 +18,56 @@ import java.util.List;
 import Adapter.BreakfastAdapter;
 import Model.ListBreakfastItem;
 
-public class LunchActivity extends AppCompatActivity {
-
+public class DinnerActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ListBreakfastItem> listItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lunch);
+        setContentView(R.layout.activity_dinner);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //        up button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Busca e inicializa el recyclerView
-        recyclerView = findViewById(R.id.lunchRecyclerView);
+        recyclerView = findViewById(R.id.dinnerRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Llamada a la funcion que popula la lista con los desayunos
-        createLunches();
+        //Llamada a la funcion que popula la lista con las cenas
+        createDinners();
 
         //Crea un nuevo adapter con la lista de items creada previamente y le fija el adapter al recyclerView
         adapter =  new BreakfastAdapter(this, listItems);
         recyclerView.setAdapter(adapter);
     }
-
-    private void createLunches() {
+    private void createDinners() {
         listItems = new ArrayList<>();
         ListBreakfastItem item;
         item = new ListBreakfastItem(
-                "Arroz con camarones", "Delicioso arroz con camarones, acompañado de papas fritas y ensalada", "Precio: 6000 i.v.i",
-                "android.resource://com.example.menuapp3/drawable/arrozcamarones");
+                "Fish n chips", "El característico Fish n Chips con salsa tártara", "Precio: 6500 i.v.i",
+                "android.resource://com.example.menuapp3/drawable/fishnchips");
         listItems.add(item);
 
         item = new ListBreakfastItem(
-                "Casado", "Casado típico que consiste de arroz, frijoles, plátano maduro y carne en salsa, pescado o bistec", "Precio: 3000 i.v.i",
-                "android.resource://com.example.menuapp3/drawable/casado");
+                "Hamburguesa con tocino", "Hamburguesa con torta de carne de media libra, queso, tocineta, cebolla, legucha y tomate" +
+                "acompañada de papas fritas", "Precio: 3000 i.v.i",
+                "android.resource://com.example.menuapp3/drawable/hamburguesa");
         listItems.add(item);
 
         item = new ListBreakfastItem(
-                "Empanada arreglada", "Empanada de la casa (carne, chicharron, queso) arreglada con repollo, salsa de tomate y mayonesa",
-                "Precio: 4000 i.v.i",
-                "android.resource://com.example.menuapp3/drawable/empanada");
+                "Filet Mignong", "Filet Mignon, acompañado de ensalada, vegetales y papas fritas o puré de papa",
+                "Precio: 10000 i.v.i",
+                "android.resource://com.example.menuapp3/drawable/filetmignong");
         listItems.add(item);
 
         item = new ListBreakfastItem(
-                "Pollo a la plancha", "Pollo a la plancha, acompañado de papas fritas y ensalada o verduras",
+                "Lasagna", "Deliciosa lasagna de pollo en salsa blanca o de carne en salsa de tomate, acompañada de pan con mantequilla de ajo",
                 "Precio: 4500 i.v.i",
-                "android.resource://com.example.menuapp3/drawable/polloplancha");
+                "android.resource://com.example.menuapp3/drawable/lasagna");
         listItems.add(item);
     }
 }

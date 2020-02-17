@@ -16,6 +16,9 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     private ImageView breakfastImage;
     private ImageView lunchImage;
+    private ImageView dinnerImage;
+    private ImageView drinksImage;
+    private ImageView dessertsImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //On click para el almuerzo
         lunchImage = (ImageView) findViewById(R.id.lunchImageMain);
 
         lunchImage.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +50,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //On click para las cenas
+        dinnerImage = (ImageView) findViewById(R.id.dinnerImageMain);
 
+        dinnerImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DinnerActivity.class));
+            }
+        });
+
+        //On click para las bebidas
+        drinksImage = (ImageView) findViewById(R.id.drinksImageMain);
+
+        drinksImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DrinkActivity.class));
+            }
+        });
+
+        //On click para los postres
+        dessertsImage = (ImageView) findViewById(R.id.dessertImageMain);
+
+        dessertsImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DessertActivity.class));
+            }
+        });
 
         //FloatingActionButton fab = findViewById(R.id.fab);
        // fab.setOnClickListener(new View.OnClickListener() {
