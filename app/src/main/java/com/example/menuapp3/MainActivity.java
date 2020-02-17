@@ -16,6 +16,8 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     private ImageView breakfastImage;
     private ImageView lunchImage;
+    private ImageView dinnerImage;
+    private ImageView drinksImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +50,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //On click para las cenas
-        lunchImage = (ImageView) findViewById(R.id.dinnerImageMain);
+        dinnerImage = (ImageView) findViewById(R.id.dinnerImageMain);
 
-        lunchImage.setOnClickListener(new View.OnClickListener() {
+        dinnerImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Aqui va el codigo
 
                 startActivity(new Intent(MainActivity.this, DinnerActivity.class));
+            }
+        });
+
+        //On click para las bebidas
+        drinksImage = (ImageView) findViewById(R.id.drinksImageMain);
+
+        drinksImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DrinkActivity.class));
             }
         });
 

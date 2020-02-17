@@ -4,4 +4,5 @@
     <string name="title_activity_breakfast">Desayunos</string>
     <string name="title_activity_lunch">Almuerzos</string>
     <string name="title_activity_dinner">DinnerActivity</string>
+    <string name="title_activity_drink">DrinkActivity</string>
 </resources>
