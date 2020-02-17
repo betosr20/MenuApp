@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //On click para el almuerzo
         lunchImage = (ImageView) findViewById(R.id.lunchImageMain);
 
         lunchImage.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +47,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //On click para las cenas
+        lunchImage = (ImageView) findViewById(R.id.dinnerImageMain);
 
+        lunchImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, DinnerActivity.class));
+            }
+        });
 
         //FloatingActionButton fab = findViewById(R.id.fab);
        // fab.setOnClickListener(new View.OnClickListener() {
