@@ -12,7 +12,8 @@
         <activity
             android:name=".LunchActivity"
             android:label="@string/title_activity_lunch"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".BreakfastActivity"
             android:label="@string/title_activity_breakfast"
