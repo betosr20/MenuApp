@@ -15,6 +15,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView breakfastImage;
+    private ImageView lunchImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         breakfastImage = (ImageView) findViewById(R.id.breakfastImageMain);
 
+        //On click para el desayuno
         breakfastImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +35,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        lunchImage = (ImageView) findViewById(R.id.lunchImageMain);
 
+        lunchImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Aqui va el codigo
+
+                startActivity(new Intent(MainActivity.this, LunchActivity.class));
+            }
+        });
 
 
 

@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            app:layout_constraintBottom_toTopOf="@+id/lunchImageMain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
             app:srcCompat="@drawable/breakfast2" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/lunchImageMain"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
@@ -50,7 +50,7 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/lunchImageMain"
             app:srcCompat="@drawable/dinnerhorizontal" />
 
         <TextView
@@ -74,8 +74,8 @@
             android:text="Almuerzo"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-            app:layout_constraintEnd_toEndOf="@+id/imageView10" />
+            app:layout_constraintBottom_toBottomOf="@+id/lunchImageMain"
+            app:layout_constraintEnd_toEndOf="@+id/lunchImageMain" />
 
         <TextView
             android:id="@+id/textView12"
