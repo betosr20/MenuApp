@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.menuapp3.R;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -128,6 +129,9 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
                     }
                 }
             }
+
+            Toast.makeText(context,"El articulo " + item.getTittle() + " ha sido añadido al carrito",Toast.LENGTH_SHORT).show();
+
             //Para hacer pruebas y borrar la lista
             //editor.clear();
             //editor.commit();
