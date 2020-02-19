@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,10 +56,11 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView image;
         public TextView tittle, description, price;
+        public CheckBox mealCheck;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            mealCheck = itemView.findViewById(R.id.cb_meal_check);
             image = itemView.findViewById(R.id.imageBreakfast);
             tittle = itemView.findViewById(R.id.breakfastTittle);
             description = itemView.findViewById(R.id.breakfastDescription);
