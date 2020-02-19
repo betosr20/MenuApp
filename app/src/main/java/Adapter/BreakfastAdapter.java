@@ -6,9 +6,11 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,6 +59,7 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
         public ImageView image;
         public TextView tittle, description, price;
         public CheckBox mealCheck;
+        public Button buttonAdd;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +68,18 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
             tittle = itemView.findViewById(R.id.breakfastTittle);
             description = itemView.findViewById(R.id.breakfastDescription);
             price = itemView.findViewById(R.id.breakfastPrice);
+            buttonAdd = itemView.findViewById(R.id.buttonAdd);
+
+            //Setea el event listener para cada boton
+            buttonAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    ListBreakfastItem item = listItem.get(position);
+                    Toast.makeText(context, item.getTittle(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
 }
