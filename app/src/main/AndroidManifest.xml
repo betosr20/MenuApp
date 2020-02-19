@@ -13,7 +13,7 @@
             android:name=".DessertActivity"
             android:label="@string/title_activity_dessert"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DrinkActivity"
             android:label="@string/title_activity_drink"
