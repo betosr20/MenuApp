@@ -1,8 +1,10 @@
 package Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.menuapp3.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+
+import java.lang.reflect.Type;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import Model.ListBreakfastItem;
@@ -74,12 +81,56 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
             buttonAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    ListBreakfastItem item = listItem.get(position);
-                    Toast.makeText(context, item.getTittle(), Toast.LENGTH_SHORT).show();
+
+                    SaveData();
                 }
             });
 
+        }
+
+        public void SaveData(){
+            // Busca el archivo de shared preferences
+            SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Gson gson =  new Gson();
+            String json = sharedPreferences.getString("task list", null);
+            Type type = new TypeToken<ArrayList<ListBreakfastItem>>() {}.getType();
+            ArrayList<ListBreakfastItem> listFromStorage;
+
+            //Trea la lista del localStorage
+            listFromStorage = gson.fromJson(json, type);
+            int position;
+            position = getAdapterPosition();
+
+            //Trae el item actual al que se le esta haciendo el on click
+            ListBreakfastItem item = listItem.get(position);
+
+            //Si es el primer item de la lista crea una nueva lista, agrega el item y la guarda
+            if (listFromStorage == null){
+                listFromStorage = new ArrayList<>();
+                listFromStorage.add(item);
+                String jsonAdd = gson.toJson(listFromStorage);
+                editor.putString("task list", jsonAdd);
+                editor.apply();
+                for (ListBreakfastItem itemShow : listFromStorage){
+                    Log.i("nombre del plato", itemShow.getTittle());
+                }
+            }else{
+                listFromStorage.add(item);
+                String jsonAdd = gson.toJson(listFromStorage);
+                editor.putString("task list", jsonAdd);
+                editor.apply();
+                if (listFromStorage == null){
+                    Log.i("me cago en licha", "ME CAGO EN LICHAAAAAAAAA");
+                }else{
+                    for (ListBreakfastItem itemShow : listFromStorage){
+                        Log.i("nombre del plato", itemShow.getTittle());
+                    }
+                }
+            }
+            //Para hacer pruebas y borrar la lista
+            //editor.clear();
+            //editor.commit();
         }
     }
 }
