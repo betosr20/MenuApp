@@ -27,7 +27,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/breakfast2" />
+            app:srcCompat="@drawable/breakfast" />
 
         <ImageView
             android:id="@+id/lunchImageMain"
@@ -39,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/breakfastImageMain"
-            app:srcCompat="@drawable/lunchhorizontal" />
+            app:srcCompat="@drawable/lunch" />
 
         <ImageView
             android:id="@+id/dinnerImageMain"
@@ -51,43 +51,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lunchImageMain"
-            app:srcCompat="@drawable/dinnerhorizontal" />
+            app:srcCompat="@drawable/dinner" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="105dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="4dp"
-            android:text="Desayuno"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/breakfastImageMain"
-            app:layout_constraintEnd_toEndOf="@+id/breakfastImageMain" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView9"-->
+<!--            android:layout_width="105dp"-->
+<!--            android:layout_height="32dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="4dp"-->
+<!--            android:text="Desayuno"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/breakfastImageMain"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/breakfastImageMain" />-->
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="4dp"
-            android:text="Almuerzo"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/lunchImageMain"
-            app:layout_constraintEnd_toEndOf="@+id/lunchImageMain" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView11"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="4dp"-->
+<!--            android:text="Almuerzo"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/lunchImageMain"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/lunchImageMain" />-->
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Cena"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/dinnerImageMain"
-            app:layout_constraintEnd_toEndOf="@+id/dinnerImageMain" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView12"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:text="Cena"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dinnerImageMain"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/dinnerImageMain" />-->
 
         <ImageView
             android:id="@+id/drinksImageMain"
@@ -101,17 +101,17 @@
             app:layout_constraintTop_toBottomOf="@+id/dinnerImageMain"
             app:srcCompat="@drawable/drinks" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Bebidas"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/drinksImageMain"
-            app:layout_constraintEnd_toEndOf="@+id/drinksImageMain" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:text="Bebidas"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/drinksImageMain"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/drinksImageMain" />-->
 
         <ImageView
             android:id="@+id/dessertImageMain"
@@ -123,19 +123,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/drinksImageMain"
-            app:srcCompat="@drawable/dessert" />
+            app:srcCompat="@drawable/desserts" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Postres"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/dessertImageMain"
-            app:layout_constraintEnd_toEndOf="@+id/dessertImageMain" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:text="Postres"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="24sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dessertImageMain"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/dessertImageMain" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
