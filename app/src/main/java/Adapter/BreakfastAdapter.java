@@ -79,7 +79,7 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
             buttonAdd = itemView.findViewById(R.id.buttonAdd);
 
             //Setea el event listener para cada boton
-            buttonAdd.setOnClickListener(new View.OnClickListener() {
+            mealCheck.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
