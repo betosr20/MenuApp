@@ -1,10 +1,14 @@
 package com.example.menuapp3;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+import Model.ListBreakfastItem;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView breakfastImage;
@@ -107,16 +116,25 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //search the list from localStorage
+        SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+        Gson gson =  new Gson();
+        String json = sharedPreferences.getString("task list", null);
+        Type type = new TypeToken<ArrayList<ListBreakfastItem>>() {}.getType();
+        ArrayList<ListBreakfastItem> listFromStorage;
 
-        return super.onOptionsItemSelected(item);
+        //Trea la lista del localStorage
+        listFromStorage = gson.fromJson(json, type);
+
+
+        //noinspection SimplifiableIfStatement
+        if (!listFromStorage.isEmpty() && id == R.id.action_settings) {
+            startActivity(new Intent(MainActivity.this, OrderActivity.class));
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
