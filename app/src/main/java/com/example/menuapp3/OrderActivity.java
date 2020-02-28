@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapter.BreakfastAdapter;
+import Adapter.OrderAdapter;
 import Model.ListBreakfastItem;
 
 public class OrderActivity extends AppCompatActivity {
@@ -53,8 +54,10 @@ public class OrderActivity extends AppCompatActivity {
         listFromStorage = gson.fromJson(json, type);
 
         //Crea un nuevo adapter con la lista de items creada previamente y le fija el adapter al recyclerView
-        adapter =  new BreakfastAdapter(this, listFromStorage);
-        recyclerView.setAdapter(adapter);
+        if (!listFromStorage.isEmpty()) {
+            adapter =  new OrderAdapter(this, listFromStorage);
+            recyclerView.setAdapter(adapter);
+        }
 
 
     }

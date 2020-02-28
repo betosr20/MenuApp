@@ -1,6 +1,7 @@
 package Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -17,6 +18,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.menuapp3.LunchActivity;
+import com.example.menuapp3.MainActivity;
 import com.example.menuapp3.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -30,18 +33,22 @@ import java.util.List;
 
 import Model.ListBreakfastItem;
 
+import com.example.menuapp3.OrderActivity;
 
-public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.ViewHolder> {
+import static androidx.core.content.ContextCompat.startActivity;
+
+
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
     private Context context;
     private List<ListBreakfastItem> listItem;
 
-    public BreakfastAdapter (Context context, List listItem){
+    public OrderAdapter (Context context, List listItem) {
         this.context = context;
         this.listItem = listItem;
     }
     @NonNull
     @Override
-    public BreakfastAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public OrderAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.breakfast_list_row, parent, false);
 
@@ -49,13 +56,14 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BreakfastAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OrderAdapter.ViewHolder holder, int position) {
         ListBreakfastItem item = listItem.get(position);
         holder.tittle.setText(item.getTittle());
         holder.description.setText(item.getDescription());
         holder.price.setText(item.getPrice());
         Uri uri = Uri.parse(item.getImageURL());
         holder.image.setImageURI(uri);
+        holder.buttonAdd.setText("-");
     }
 
     @Override
@@ -83,12 +91,13 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
                 public void onClick(View v) {
 
                     SaveData();
+
                 }
             });
 
         }
 
-        public void SaveData(){
+        public void SaveData() {
             // Busca el archivo de shared preferences
             SharedPreferences sharedPreferences = context.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -105,35 +114,28 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
             //Trae el item actual al que se le esta haciendo el on click
             ListBreakfastItem item = listItem.get(position);
 
-            //Si es el primer item de la lista crea una nueva lista, agrega el item y la guarda
-            if (listFromStorage == null){
-                listFromStorage = new ArrayList<>();
-                listFromStorage.add(item);
+            if (listFromStorage != null) {
+                listFromStorage.remove(position);
                 String jsonAdd = gson.toJson(listFromStorage);
                 editor.putString("task list", jsonAdd);
                 editor.apply();
-                for (ListBreakfastItem itemShow : listFromStorage){
-                    Log.i("nombre del plato", itemShow.getTittle());
+
+                if (!listFromStorage.isEmpty()) {
+                    Intent intent = new Intent(context, OrderActivity.class);
+                    context.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
                 }
-            }else{
-                listFromStorage.add(item);
-                String jsonAdd = gson.toJson(listFromStorage);
-                editor.putString("task list", jsonAdd);
-                editor.apply();
-                if (listFromStorage == null){
-                    Log.i("me cago en licha", "ME CAGO EN LICHAAAAAAAAA");
-                }else{
-                    for (ListBreakfastItem itemShow : listFromStorage){
-                        Log.i("nombre del plato", itemShow.getTittle());
-                    }
-                }
+
+
             }
 
-            Toast.makeText(context,"El articulo " + item.getTittle() + " ha sido añadido al carrito",Toast.LENGTH_SHORT).show();
 
-            //Para hacer pruebas y borrar la lista
-            //editor.clear();
-            //editor.commit();
+            Toast.makeText(context,"El articulo " + item.getTittle() + " ha sido eliminado del carrito",Toast.LENGTH_SHORT).show();
+
         }
     }
 }
+
+
