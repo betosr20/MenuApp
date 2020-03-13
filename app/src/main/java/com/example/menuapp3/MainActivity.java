@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -28,8 +29,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView dinnerImage;
     private ImageView drinksImage;
     private ImageView dessertsImage;
+    private FirebaseAnalytics mFirebaseAnalytics;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Inicializa la instancia de Firebase Analytics
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -39,7 +44,13 @@ public class MainActivity extends AppCompatActivity {
         breakfastImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Aqui va el codigo
+                String stringID;
+                stringID = String.valueOf(breakfastImage.getId());
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, stringID);
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Breakfast Image");
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
                 startActivity(new Intent(MainActivity.this, BreakfastActivity.class));
             }
@@ -94,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DessertActivity.class));
             }
         });
+        
 
         //FloatingActionButton fab = findViewById(R.id.fab);
        // fab.setOnClickListener(new View.OnClickListener() {
