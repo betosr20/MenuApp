@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.menuapp3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".OrderFeedbackActivity"
+            android:label="@string/title_activity_order_feedback"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".OrderActivity"
             android:label="@string/title_activity_order"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DessertActivity"
             android:label="@string/title_activity_dessert"
@@ -50,7 +57,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

@@ -8,4 +8,6 @@
     <string name="title_activity_dessert">Postres</string>
     <string name="title_activity_lol">lol</string>
     <string name="title_activity_order">Orden</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_order_feedback">orderFeedback</string>
 </resources>

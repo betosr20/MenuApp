@@ -27,7 +27,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/breakfast" />
+            android:contentDescription="@string/title_activity_breakfast"
+            app:srcCompat="@drawable/desayuno" />
 
         <ImageView
             android:id="@+id/lunchImageMain"
@@ -35,11 +36,12 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:scaleType="fitXY"
+            android:contentDescription="@string/title_activity_lunch"
             app:layout_constraintBottom_toTopOf="@+id/dinnerImageMain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/breakfastImageMain"
-            app:srcCompat="@drawable/lunch" />
+            app:srcCompat="@drawable/almuerzo" />
 
         <ImageView
             android:id="@+id/dinnerImageMain"
@@ -47,11 +49,12 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:scaleType="fitXY"
+            android:contentDescription="@string/title_activity_dinner"
             app:layout_constraintBottom_toTopOf="@+id/drinksImageMain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lunchImageMain"
-            app:srcCompat="@drawable/dinner" />
+            app:srcCompat="@drawable/cena" />
 
 <!--        <TextView-->
 <!--            android:id="@+id/textView9"-->
@@ -95,11 +98,12 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:scaleType="fitXY"
+            android:contentDescription="@string/title_activity_drink"
             app:layout_constraintBottom_toTopOf="@+id/dessertImageMain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dinnerImageMain"
-            app:srcCompat="@drawable/drinks" />
+            app:srcCompat="@drawable/bebida" />
 
 <!--        <TextView-->
 <!--            android:id="@+id/textView2"-->
@@ -119,11 +123,12 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:scaleType="fitXY"
+            android:contentDescription="@string/title_activity_dessert"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/drinksImageMain"
-            app:srcCompat="@drawable/desserts" />
+            app:srcCompat="@drawable/postre" />
 
 <!--        <TextView-->
 <!--            android:id="@+id/textView3"-->
